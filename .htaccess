@@ -1,0 +1,7 @@
+
+# HTID:4562796: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:4562796:
+
+ErrorDocument 404 http://localhost/up2d/welcome/error.html?status=404
+ErrorDocument 500 http://localhost/up2d/welcome/error.html?status=500

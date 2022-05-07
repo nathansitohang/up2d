@@ -1,0 +1,24 @@
+<?php			
+
+   include('../../session.php');
+   include('../../config.php');							
+						$query="SELECT*
+                        FROM titik WHERE KODE_ASET = 2" ;
+                        $result = mysqli_query($db, $query);
+                        if (!$result) {
+                          die('Invalid query: ' . mysqli_error());
+                        }
+						
+				
+                        
+                          
+                          while ($row = @mysqli_fetch_assoc($result)){
+                        $no = $row['NO'];
+	
+                        	}
+                        	
+                                     
+                   
+						
+						
+?>

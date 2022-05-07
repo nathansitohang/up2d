@@ -1,0 +1,65 @@
+<?php
+include('session.php');
+include('config.php');
+function parseToXML($htmlStr)
+{
+$xmlStr=str_replace('<','&lt;',$htmlStr);
+$xmlStr=str_replace('>','&gt;',$xmlStr);
+$xmlStr=str_replace('"','&quot;',$xmlStr);
+$xmlStr=str_replace("'",'&#39;',$xmlStr);
+$xmlStr=str_replace("&",'&amp;',$xmlStr);
+return $xmlStr;
+}
+
+
+
+if ($login_role == "admin") {
+$query="SELECT*
+FROM master WHERE 1" ;} 
+else if ($login_role == "area") {
+$query="SELECT*
+FROM master WHERE idarea ='$login_idarea'" ;} 
+else {
+$query="SELECT*
+FROM master WHERE idrayon ='$login_idrayon'" ;} 
+
+
+
+
+//$query="SELECT * FROM master WHERE 1";
+$result = mysqli_query($db, $query);
+if (!$result) {
+  die('Invalid query: ' . mysqli_error());
+}
+
+
+
+header("Content-type: text/xml");
+// Start XML file, echo parent node
+echo '<markers>';
+// Iterate through the rows, printing XML nodes for each
+while ($row = @mysqli_fetch_assoc($result)){
+  // ADD TO XML DOCUMENT NODE
+  echo '<marker>';
+  echo '<idgardu>' . parseToXML($row['idgardu']) . ' </idgardu>';
+  echo '<kodegd>' . parseToXML($row['kodegd']) . '</kodegd> ';
+  echo '<alamat>' . parseToXML($row['alamat']) . ' </alamat>';
+  echo '<feeder>' . $row['feeder'] . ' </feeder>';  
+  echo '<ufeeder>' . $row['ufeeder'] . ' </ufeeder>';
+  echo '<kapasitas>' . $row['kapasitas'] . ' </kapasitas>';
+  echo '<fasa>' . $row['fasa'] . '</fasa>';
+  echo '<merek>' . parseToXML($row['merek']) . ' </merek>';
+    echo '<noseri>' . parseToXML($row['noseri']) . '</noseri>';
+   echo '<thntrafo>' . parseToXML($row['thntrafo']) . '</thntrafo>';
+   echo '<lat>' . parseToXML($row['lat']) . '</lat> ';
+   echo '<lng>' . parseToXML($row['lng']) . ' </lng>';
+   
+  echo '</marker>';
+}
+
+// End XML file
+echo '</markers>';
+
+
+
+?>

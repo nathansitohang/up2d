@@ -1,0 +1,19 @@
+
+		
+<?php
+include("db_connection.php");
+
+$up3 = $_POST['up3'];
+$sql = mysqli_query($db, "SELECT * FROM kota WHERE idarea='".$up3."' ORDER BY idrayon");
+
+$html = "<option value=''>Pilih</option>";
+
+while($data = mysqli_fetch_array($sql)){ // Ambil semua data dari hasil eksekusi $sql
+	$html .= "<option value='".$data['idrayon']."'>".$data['rayon']."</option>"; // Tambahkan tag option ke variabel $html
+}
+
+$callback = array('data_kota'=>$html); // Masukan variabel html tadi ke dalam array $callback dengan index array : data_kota
+
+echo json_encode($callback); // konversi varibael $callback menjadi JSON
+?>
+                   		

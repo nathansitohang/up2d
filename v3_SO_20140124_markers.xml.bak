@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<markers>
+
+ <marker>
+  <lat>0</lat>
+  <lng>-1</lng>
+
+ </marker>
+ <marker>
+   <lat>1</lat>
+   <lng>0</lng>
+
+ </marker>
+ <marker>
+   <lat>-1</lat>
+   <lng>0</lng>
+
+</marker>
+</markers>

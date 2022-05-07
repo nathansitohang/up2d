@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<markers>
+    <marker>
+         <name>M1</name>
+         <address>Abbey Street</address>
+         <lat>53.3496</lat>
+         <lng>-6.257</lng>
+   </marker>
+ <marker>
+  <lat>43.65654</lat>
+  <lng>-79.90138</lng>
+  <html>Some stuff to display in the&lt;br&gt;First Info Window</html>
+  <label>Marker One</label>
+ </marker>
+ <marker>
+   <lat>43.91892</lat>
+   <lng>-78.89231</lng>
+   <html>Some stuff to display in the&lt;br&gt;Second Info Window</html>
+   <label>Marker Two</label>
+ </marker>
+ <marker>
+   <lat>43.82589</lat>
+   <lng>-79.10040</lng>
+   <html>Some stuff to display in the&lt;br&gt;Third Info Window</html>
+   <label>Marker Three</label>
+</marker>
+</markers>
